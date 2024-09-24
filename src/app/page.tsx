@@ -1,9 +1,18 @@
 import Link from "next/link";
+import mockData from "../../mock.json";
+
+const data = mockData.map(({ key, url }) => ({ key, url }));
 
 export default function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center bg-gradient-to-b from-[#2e026d] to-[#15162c] text-white">
-      <div>Hello there!</div>
+    <main>
+      <div className="flex flex-wrap gap-5">
+        {[...data, ...data, ...data].map(({ key, url }) => (
+          <div className="w-48">
+            <img src={url} key={key} />
+          </div>
+        ))}
+      </div>
     </main>
   );
 }

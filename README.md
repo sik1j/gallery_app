@@ -2,8 +2,8 @@
 
 ## Todo
 
-- [ ] deploy
-- [ ] basic ui scaffold
+- [x] deploy
+- [x] basic ui scaffold
 - [ ] setup database
 - [ ] add auth (w/ clerk)
 - [ ] add image upload
