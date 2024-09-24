@@ -4,6 +4,7 @@
 
 - [x] deploy
 - [x] basic ui scaffold
+- [x] tidy up build process
 - [ ] setup database
 - [ ] add auth (w/ clerk)
 - [ ] add image upload
