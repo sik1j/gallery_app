@@ -1,12 +1,19 @@
 import { SignedIn, SignedOut } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
 const Images = async () => {
-  const images = await db.query.images.findMany({
-    orderBy: (model, { desc }) => desc(model.id),
-  });
+  const signedInUserId = (await auth()).userId;
+
+  const images = signedInUserId
+    ? await db.query.images.findMany({
+        orderBy: (model, { desc }) => desc(model.id),
+        where: (model, { eq }) => eq(model.userId, signedInUserId),
+      })
+    : [];
+
   return (
     <div className="flex flex-wrap gap-5">
       {images.map((img, ind) => (

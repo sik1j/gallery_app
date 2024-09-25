@@ -8,7 +8,7 @@
 - [x] setup database (w/ vercel postgres)
 - [x] attach db to ui
 - [x] add auth (w/ clerk)
-- [ ] add image upload (w/ uploadThing)
+- [x] add image upload (w/ uploadThing)
 - [ ] error handling (w/ sentry)
 - [ ] routing/image page (parallel routes)
 - [ ] delete button (w/ server actions)
