@@ -2,6 +2,8 @@ import Link from "next/link";
 import mockData from "../../mock.json";
 import { db } from "~/server/db";
 
+export const dynamic = "force-dynamic";
+
 const data = mockData.map(({ key, url }) => ({ key, url }));
 
 export default async function HomePage() {
