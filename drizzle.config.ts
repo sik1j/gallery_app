@@ -8,5 +8,5 @@ export default {
   dbCredentials: {
     url: env.POSTGRES_URL,
   },
-  tablesFilter: ["gallary_app_*"],
+  tablesFilter: ["gallery_app_*"],
 } satisfies Config;
