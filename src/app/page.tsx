@@ -1,23 +1,22 @@
 import Link from "next/link";
-import mockData from "../../mock.json";
 import { db } from "~/server/db";
 
 export const dynamic = "force-dynamic";
 
-const data = mockData.map(({ key, url }) => ({ key, url }));
-
 export default async function HomePage() {
-  const posts = await db.query.posts.findMany();
+  // const posts = await db.query.posts.findMany();
+  const images = await db.query.images.findMany({
+    orderBy: (model, { desc }) => desc(model.id),
+  });
+  console.log(images);
 
   return (
     <main>
       <div className="flex flex-wrap gap-5">
-        {posts.map((post) => (
-          <div key={post.id}>{post.name}</div>
-        ))}
-        {[...data].map((img, ind) => (
-          <div className="w-48">
-            <img src={img.url} key={img.key} />
+        {images.map((img, ind) => (
+          <div className="flex w-48 flex-col">
+            <img src={img.url} key={img.id} />
+            <div>{img.name}</div>
           </div>
         ))}
       </div>

@@ -6,6 +6,7 @@
 - [x] basic ui scaffold
 - [x] tidy up build process (ignore typescript and eslint build errors)
 - [x] setup database (w/ vercel postgres)
+- [x] attach db to ui
 - [ ] add auth (w/ clerk)
 - [ ] add image upload (w/ uploadThing)
 - [ ] error handling (w/ sentry)
